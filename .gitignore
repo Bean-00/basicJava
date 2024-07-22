@@ -1,2 +1,5 @@
 #intellij 설정파일 무시
-
+.idea
+.gitignore
+*.iml
+*.class
