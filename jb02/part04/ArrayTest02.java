@@ -10,10 +10,10 @@ public class ArrayTest02 {
 
         for (int j = 0; j < value.length; j++){
             System.out.println("=====================");
+            for (int k = 0; k < value[j].length; k++){
+                System.out.println("value[" + j + "][" + k + "] = " + value[j][k]);
+            }
         }
 
-        for (int k = 0; k < value[j].length; k++){
-            System.out.println("value[" + j + "][" + k + "] = " + value[j][k]);
-        }
     }
 }
