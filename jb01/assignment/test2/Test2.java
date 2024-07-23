@@ -7,7 +7,7 @@ public class Test2 {
             int secondNum = Integer.parseInt(args[1]);
 
             System.out.print("첫번째인수: " + firstNum + ", ");
-            System.out.print("두번쨰인수: " + secondNum + ", ");
+            System.out.print("두번째 인수: " + secondNum + ", ");
 
             if (firstNum == secondNum) {
                 System.out.println("a와 b의 크기가 같아 연산이 불가능합니다.");
