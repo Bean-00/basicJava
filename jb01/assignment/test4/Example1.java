@@ -11,7 +11,7 @@ public class Example1 {
             } else if (80 <= score && score < 90) {
                 System.out.println("입력하신 값 " + score + "점은 우입니다.");
             } else if (70 <= score && score < 80) {
-                System.out.println("압룍허산 값 " + score + "점은 미입니다.");
+                System.out.println("입력하신 값 " + score + "점은 미입니다.");
             } else if (60 <= score && score < 70) {
                 System.out.println("입력하신 값 " + score + "점은 양입니다.");
             } else {
