@@ -17,7 +17,7 @@ public class Father {
         }
     }
 
-    public int GetPassword(int key) {
+    public int getPassword(int key) {
         if (key != 7777) {
             return 0;
         } else {
