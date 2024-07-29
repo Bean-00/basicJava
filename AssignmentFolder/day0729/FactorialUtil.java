@@ -36,6 +36,5 @@ public class FactorialUtil {
         }
         System.out.print("팩토리얼 결과 값 = " + util.factorial(inputInt) + "  ( "
             + util.factorialResult + " )");
-
     }
 }
