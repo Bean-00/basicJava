@@ -1,7 +1,7 @@
 package jb04.part07.outer;
 
-public class Son1 extends jb04.part07.Father {
-    public Son1() {
+public class Son01 extends jb04.part07.Father {
+    public Son01() {
         System.out.println(this.name);
         System.out.println(bank);
 //        System.out.println(branch);
