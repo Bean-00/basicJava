@@ -3,13 +3,13 @@ package jb05.part02;
 /*
   FileName : ObjectTest.java 
   
-   ==> static modifier ÀÌÇØ
-  	1. »óÅÂ¿Í ¹«°üÇÑ »óÅÂ°ª  ( ? )
-  	2. »óÅÂ¿Í ¹«°üÇÑ ÇàÀ§ ( ? )
+   ==> static modifier ï¿½ï¿½ï¿½ï¿½
+  	1. ï¿½ï¿½ï¿½Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½  ( ? )
+  	2. ï¿½ï¿½ï¿½Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ( ? )
   	
-  	==> ObjectTest.class ½ÇÇà½Ã Ãâ·Â°á°ú¸¦ ¿¹Ãø ½ÇÇà ºñ±³
-  	==> static : Å¬·¡½º·Î »ý¼ºµÈ ÀÎ½ºÅÏ½ºµéÀÌ ¸ðµÎ °øÀ¯ÇÏ´Â ¼Ó¼º , ÇàÀ§
-  	                   : ClassName.~~ Á¢±Ù °¡´É.
+  	==> ObjectTest.class ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+  	==> static : Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ó¼ï¿½ , ï¿½ï¿½ï¿½ï¿½
+  	                   : ClassName.~~ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 */
 public class ObjectTest{
 	
@@ -42,13 +42,13 @@ public class ObjectTest{
 	public static void main(String args[]){
 		
 		System.out.println("|===============|");
-		ObjectTest obj1 = new ObjectTest();
+		ObjectTest1 obj1 = new ObjectTest1();
 		obj1.printInstanceInt();
 		obj1.printClassInt();
 		System.out.println("|===============|");
-		ObjectTest.printClassInt();
+		ObjectTest1.printClassInt();
 		
-	    //==> À§ÀÇ Ãâ·Â°á°ú¸¦ ÀÌÇØÇÑ´Ù¸é ¾Æ·¡¸¦ ÁÖ¼®Ç®°í ½ÇÇàÇÑ´Ù¸é °á°ú¸¦ ¿¹ÃøÇÏ¸é...
+	    //==> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´Ù¸ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½Ç®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½...
 		//System.out.println("|===============|");
 		//ObjectTest obj2 = new ObjectTest();
 		//obj2.i=100;

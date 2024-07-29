@@ -1,12 +1,12 @@
 package jb04.part07;
 
-public class Other {
+public class Other1 {
     String name = "홍길동";
     String job = new String("개발자");
 
     Father owner = new Father();
 
-    public Other() {
+    public Other1() {
         System.out.println(this.owner.name);
         System.out.println(owner.bank);
         System.out.println(owner.branch);
