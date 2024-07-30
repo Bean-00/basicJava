@@ -3,6 +3,8 @@ package jb05.part08;
 public abstract class Bank {
     private String name;
 
+    public  Bank() {
+    }
     public Bank(String name) {
         this.name = name;
     }
