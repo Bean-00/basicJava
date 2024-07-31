@@ -1,5 +1,3 @@
-//package jp02.part03;
-
 import java.io.*;
 
 /*

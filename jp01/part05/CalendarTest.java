@@ -1,5 +1,3 @@
-//package jp01.part05;
-
 /*
 *	FileName : CalendarTest.java  
 *
