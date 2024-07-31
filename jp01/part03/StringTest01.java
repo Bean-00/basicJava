@@ -3,9 +3,9 @@ package jp01.part03;
 /*
 	FileName : StringTest01.java
 	
-	 1. ¹®ÀÚ¿­À» Object Modeling ÇÑ String Æ¯Â¡
-	 2. ½ÇÇà°á°ú¸¦ ¿¡ÃøÇÏ°í,  ¿¹ÃøÇÑ °á°ú¿Í ¸Â´ÂÁö È®ÀÎ
-	 3. ÀÎ½ºÅÏ½º ºñ±³½Ã == °ú equals() Method ´Ù½Ã ÀÌÇØ 
+	 1. ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ Object Modeling ï¿½ï¿½ String Æ¯Â¡
+	 2. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½,  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+	 3. ï¿½Î½ï¿½ï¿½Ï½ï¿½ ï¿½ñ±³½ï¿½ == ï¿½ï¿½ equals() Method ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 */
 
 public class  StringTest01{
@@ -13,12 +13,12 @@ public class  StringTest01{
 	///main method
 	public static void main(String[] args)	{
 		
-		String s1 = "È«±æµ¿";
-		String s2 = "È«±æµ¿";
-		String s3 = new String("È«±æµ¿");
-		String s4 = new String("È«±æµ¿");
+		String s1 = "È«ï¿½æµ¿";
+		String s2 = "È«ï¿½æµ¿";
+		String s3 = new String("È«ï¿½æµ¿");
+		String s4 = new String("È«ï¿½æµ¿");
 		
-		// == ºñ±³
+		// == ï¿½ï¿½
 		System.out.println("s1==s2 : "+(s1==s2));
 		System.out.println("s1==s3 : "+(s1==s3));
 		System.out.println("s1==s4 : "+(s1==s4));
@@ -26,7 +26,7 @@ public class  StringTest01{
 		System.out.println("s1==s2 : "+(s2==s4));
 		System.out.println("s3==s4 : "+(s3==s4));
 
-		// equals() ºñ±³
+		// equals() ï¿½ï¿½
 		System.out.println("s1.equals(s2) : "+s1.equals(s2));
 		System.out.println("s1.equals(s3) : "+s1.equals(s3));
 		System.out.println("s1.equals(s4) : "+s1.equals(s4));

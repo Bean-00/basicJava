@@ -1,23 +1,23 @@
-//package jp01.part08;
+package jp01.part08;
 
 import java.util.*;
 
 /*
 	FileName : AutoBoxingUnBoxingTest.java
 	
-	::JDK 1.5ï¿½ß°ï¿½ï¿½ï¿½ï¿½ AutoBoxing/Auto-unBoxing
-	1. primitive / Reference ï¿½ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½È¯ ï¿½Ò°ï¿½
-	2. primitive / Reference ï¿½ï¿½ï¿½ï¿½ È£È¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Wrapper class ï¿½ï¿½ï¿½ï¿½
+	::JDK 1.5Ãß°¡±â´É AutoBoxing/Auto-unBoxing
+	1. primitive / Reference ´Â »óÈ£ Çüº¯È¯ ºÒ°¡
+	2. primitive / Reference ¿ÍÀÇ È£È¯À» À§ÇØ Wrapper class Á¦°ø
 	    ==> int i = 1;
 		==> Integer integer = new Integer(i);
 		==> int j = integer.intValue();
 
-		==> JDK 1.5ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½(?)ï¿½ï¿½ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+		==> JDK 1.5¿¡¼­´Â À§ÀÇ ÀÎ½ºÅÏ½º »ı¼ºÀÌ ³»ºÎÀûÀ¸·Î ÀÚµ¿(?)À¸·Î ÀÌ·ç¾î Áø´Ù.
 		==> Integer integer = 1    
-				( ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  Integer integer = new Integer(i); ï¿½ï¿½ï¿½ï¿½ :: autoboxing )
+				( ³»ºÎÀûÀ¸·Î  Integer integer = new Integer(i); ¼öÇà :: autoboxing )
 		==> int j = integer
-				( ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  int j = integer.intValue(); ï¿½ï¿½ï¿½ï¿½ :: autounboxing )
-		==> ï¿½ï¿½ï¿½ Wrapper classï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+				( ³»ºÎÀûÀ¸·Î  int j = integer.intValue(); ¼öÇà :: autounboxing )
+		==> ¸ğµç Wrapper class¿¡¼­ Àû¿ëµÊ
 */
 public class AutoBoxingUnBoxingTest{
 	
@@ -26,13 +26,13 @@ public class AutoBoxingUnBoxingTest{
 	///Constructor
 	
 	///Method
-	//==>jdk1.4ï¿½ï¿½ ï¿½ï¿½ï¿½
+	//==>jdk1.4ÀÇ °æ¿ì
 	public void add14(int intValue,double doubleValue,boolean boo){
 		Integer i = new Integer(intValue);
 		Double d = new Double(doubleValue);
 		Boolean b = new Boolean(boo);
 
-		//==>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½...
+		//==>°¢°¢ÀÇ Ãâ·ÂÇÏ¸é...
 		System.out.println("i.toString() : "+i);
 		System.out.println("i.intValue() : "+i.intValue());
 		System.out.println("d.toString() : "+d);
@@ -41,17 +41,17 @@ public class AutoBoxingUnBoxingTest{
 		System.out.println("b.booleanValue() : "+ b.booleanValue());
 		
 		double result = i.intValue()+d.doubleValue();
-		System.out.println("ï¿½ï¿½ : "+result);
+		System.out.println("ÇÕ : "+result);
 	}
 	
-	//==>jdk1.5ï¿½ï¿½ ï¿½ï¿½ï¿½
+	//==>jdk1.5ÀÇ °æ¿ì
 	public void add15(int intValue,double doubleValue,boolean boo){
-		//==> Autoboxing ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ::  Method add14() ï¿½ï¿½
-		Integer i = intValue;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ==>Integer i = new Integer(intValue); 
-		Double d = doubleValue; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ==>Double d = new Double(doubleValue); 
-		Boolean b = boo;				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ==>Boolean b = new Boolean(boo);
+		//==> Autoboxing ±â´É ÀÌÇØ ::  Method add14() ºñ±³
+		Integer i = intValue;			//³»ºÎÀû¼öÇà ==>Integer i = new Integer(intValue); 
+		Double d = doubleValue; //³»ºÎÀû¼öÇà ==>Double d = new Double(doubleValue); 
+		Boolean b = boo;				//³»ºÎÀû¼öÇà ==>Boolean b = new Boolean(boo);
 
-		//==>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½...
+		//==>°¢°¢ÀÇ Ãâ·ÂÇÏ¸é...
 		System.out.println("i.toString() : "+i);
 		System.out.println("i.intValue() : "+i.intValue());
 		System.out.println("d.toString() : "+d);
@@ -59,12 +59,12 @@ public class AutoBoxingUnBoxingTest{
 		System.out.println("b.toString () : "+ b);
 		System.out.println("b.booleanValue() : "+ b.booleanValue());
 		
-		//==> Auto-unboxing ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
-		double result = i+d;          //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ==>i.intValue()+d.doubleValue();
-		System.out.println("ï¿½ï¿½ : "+result);
+		//==> Auto-unboxing ±â´É ÀÌÇØ.
+		double result = i+d;          //³»ºÎÀû¼öÇà ==>i.intValue()+d.doubleValue();
+		System.out.println("ÇÕ : "+result);
 	}
 	
-	//==>jdk1.4ï¿½ï¿½ ï¿½ï¿½ï¿½
+	//==>jdk1.4ÀÇ °æ¿ì
 	public void addArrayList14(int intValue){
 		ArrayList arryList = new ArrayList();
 		arryList.add(new Integer(intValue));
@@ -72,8 +72,8 @@ public class AutoBoxingUnBoxingTest{
 		System.out.println(i.intValue());
 	}
 	
-	//==>jdk1.5ï¿½ï¿½ ï¿½ï¿½ï¿½
-	//==>ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ generic/autoboxing/auto unboxing ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	//==>jdk1.5ÀÇ °æ¿ì
+	//==>¾Æ·¡ÀÇ ÄÚµù¿¡¼­ generic/autoboxing/auto unboxing Àû¿ë ÀÌÇØ
 	public void addArrayList15(int intValue){
 		ArrayList<Integer> arrayList = new ArrayList<Integer>();
 		arrayList.add(intValue);      //==>autoboxing

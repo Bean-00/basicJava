@@ -3,14 +3,14 @@ package jp02.part03;
 /*
  * FileName : ExcpetionTest06.java 
  */
-public class ExceptionTest06{	
+public class ExceptionTest061 {
 
 	///Field
 	private int sum;
 	private int avg;
 	
 	///Constructor	
-	public ExceptionTest06(){
+	public ExceptionTest061(){
 	}
 
 	///Method
