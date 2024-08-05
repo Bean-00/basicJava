@@ -2,6 +2,7 @@ package AssignmentFolder.day0802;
 
 public class Prob {
     private static String[] stringSplit (String str1, String str2){
+        String[] result = null;
         result = str1.split(str2);
 
         return result;
