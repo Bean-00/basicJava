@@ -1,4 +1,4 @@
-package jp04.part01;
+//package jp04.part01;
 
 public class AfterThreadRunnable implements Runnable {
     private String name;
@@ -23,7 +23,7 @@ public class AfterThreadRunnable implements Runnable {
 
     public static void main(String[] args) {
         System.out.println("여기는 main start...");
-        AfterThreadRunnable bt1 = new AfterThreadRunnable("1번쨰");
+        Runnable bt1 = new AfterThreadRunnable("1번쨰");
         AfterThreadRunnable bt2 = new AfterThreadRunnable("2번쨰");
 
         Thread t1 = new Thread(bt1);
