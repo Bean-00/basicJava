@@ -2,13 +2,13 @@ package jp03.part06;
 
 import java.io.*;
 
-public class UserVO implements Serializable{
+public class UserVO01 implements Serializable{
     private int no;
     private String name;
 
-    public UserVO(){
+    public UserVO01(){
     }
-    public UserVO(int no, String name){
+    public UserVO01(int no, String name){
         this.no = no;
         this.name = name;
     }
