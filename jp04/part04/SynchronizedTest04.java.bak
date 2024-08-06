@@ -34,7 +34,7 @@ public class SynchronizedTest04 implements Runnable{
 			}catch(Exception e){}
 
             if( check ){
-				System.out.println(Thread.currentThread().getName() + "break¹®");
+				System.out.println("break¹®");
                 check=false;
                 break;
             }

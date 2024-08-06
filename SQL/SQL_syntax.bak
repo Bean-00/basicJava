@@ -49,8 +49,6 @@ VALUES (1, '김사장', 100, '사장', '04-07-19', '개발부');
 
 SELECT * FROM EMP_TEST;
 
-set linesize 1000; --출력 길이 조정, 안되면 콘솔 가로 길이 조정
-
 -- //==========================================//
 
 INSERT
@@ -63,7 +61,7 @@ INSERT
 INTO emp_test (id, name, title)
 VALUES (4, '이순신', '장군');
 
--- //>>=============================================//
+-- //=============================================//
 
 INSERT
 INTO emp_test (id, name, title)
@@ -91,7 +89,7 @@ VALUES (5, '장나라');
 
 INSERT
 INTO emp_test
-VALUES(6, '신나라', NULL, null, '','');
+VALUES(6, '신나라', NULL, null, ",");
 
 COMMIT;
 
