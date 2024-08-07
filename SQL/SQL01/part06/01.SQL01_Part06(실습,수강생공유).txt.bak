@@ -54,33 +54,15 @@ COMMIT;
 ==> 실습 후 ROLLBACK
 
 1.  salary가 null 이고 title가 null인 직원 검색		:: SELECT
-SELECT * FROM emp_test
-WHERE salary IS NULL AND title IS NULL;
 
 2.  title이 null인 직원 title 계약직 변경				:: UPDATE
-update emp_test
-SET title = '계약직'
-WHERE title IS NULL;
 
 3.  월급 2000 이상인  직원 '특판팀' 변경 및
       현 월급에서 무조건 1000 차감 변경			:: UPDATE
 
-update emp_test
-SET title = '특판팀', salary = salary -1000
-where salary >= 2000;
-
-
-
 4.  2005년 01월01일 이후 입사자 검색			:: SELECT
      (날짜 비교 ??? :: 과거, 현재, 미래)
-SELECT * FROM emp_test
-WHERE in_date > '05-01-01';
-
-
 
 5.  2005년 01월01일 이후 입사자 이고
       월급이 6000원 이하인 직원 검색				:: SELECT 
-SELECT * FROM emp_test
-WHERE in_date > '05-01-01' and salary < 6000;
-
 //==============================================//
