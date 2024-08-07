@@ -73,9 +73,9 @@ SELECT  salary, RPAD(TRANSLATE(NVL(salary,0),'0123456789','영일이삼사오육칠팔구'
 FROM  emp_test;
 
 SELECT name FROM  emp_test
- /*WHERE LENGTH(name) = 3; */
+ WHERE LENGTH(name) = 3;
 /*  WHERE LENGTH(name) != 3;   */
-  WHERE LENGTH(name) <> 3; 
+/*  WHERE LENGTH(name) <> 3;  */
 
 
 
@@ -117,8 +117,8 @@ ORDER  BY  퇴직금  DESC;
 //==> 재직기간 :: 단위 일 /  개월( 1달 28일 ,30일 , 31일 ??)
 //==> 각각의 계산결과 확인 :: 난짜는  일(DAY) 기준
 SELECT
-/* name  ,SYSDATE - in_date || ' 일 재직' */
- name  , (SYSDATE - in_date)/30 || ' 월 재직' 
+name  ,SYSDATE - in_date || ' 일 재직' 
+/*  name  , (SYSDATE - in_date)/30 || ' 월 재직'   */
 /*  name  , (SYSDATE - in_date)/31 || ' 월 재직'  */
 FROM emp_test;
 
