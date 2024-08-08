@@ -29,41 +29,5 @@ WHERE dept_id = (
 	from c_emp
 	where name = '이순신');
 
-select
-name 이름,
-dept_id 부서아이디
-from c_emp
-where dept_id = ( select id
-			from s_dept
-			where dept_name in ('총무부'))
-			OR
-	dept_id = (select id
-			from s_dept
-			where dept_name in ( '영업부')
-	);
-	
-
-select
-name 이름,
-dept_id 부서아이디
-from c_emp
-where dept_id in ( select id
-			from s_dept
-			where dept_name in ('총무부', '영업부'));
-
-
-각 부서에서 최소 월급을 받는 직원 이름, 월급, 부서번호 조회
-select
-name, salary, dept_id
-from c_emp
-where (salary, dept_id) in ( select
-			min(salary), dept_id
-			from c_emp
-			group by dept_id);
-
-select
-			min(salary), dept_id
-			from c_emp
-			group by dept_id
 
 3. 홍길동과 월급등급이 같은 직원   이름, 부서명 , 월급 ,월급등급  조회
