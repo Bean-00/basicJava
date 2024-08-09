@@ -4,16 +4,7 @@
 
 1. || 사용      홍길동 님은 관리부에서 근무함       형식으로 출력
 
-SELECT
-name ||'님은 '||dept_name||'에서 근무함' 근무방식
-FROM emp_test;
-
-
 2. || 사용  아래와 같이 출력 (ALIAS사용)
-
-SELECT
-name ||'님 '||title||'이며 연봉은 '||NVL(salary*12,0)||'원 ' "이름 직책 연봉 ?"
-FROM emp_test;
 
 이름 직책 연봉 ?   
 ------------------------------------------------------------------
@@ -44,25 +35,6 @@ SCOTT 님 부사장이며 연봉은 18000 원
 
 1.  개발부서의 김사장입니다       형식조회  (오름차순으로 정렬)
 
-SELECT
-dept_name || '서의 ' || name || title || '입니다' "형식조회"
-FROM emp_test
-ORDER BY dept_name, name;
-//order by 1
-
-
 2. 부서별/연봉이 높은 순서 이름/부서/연봉 조회
 
-SELECT
-name 이름, dept_name 부서별, salary 연봉
-FROM emp_test
-ORDER BY dept_name, salary;
-
-
-
 3. 연봉이 높은순서,  입사연도가 빠른순서 연봉/입사년도/이름 조회
-
-SELECT
-salary 연봉, in_date 입사년도, name 이름
-FROM emp_test
-ORDER BY salary, in_date;

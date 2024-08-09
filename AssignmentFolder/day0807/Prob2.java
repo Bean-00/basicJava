@@ -3,8 +3,6 @@ package AssignmentFolder.day0807;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Deque;
 import java.util.Vector;
 
 class Score {
@@ -12,25 +10,16 @@ class Score {
     private int kor;
     private int eng;
     private int math;
-    private int sum;
 
     public Score() {
 
     }
 
-    public Score(String name, int kor, int eng, int math, int sum) {
+    public Score(String name, int kor, int eng, int math) {
         this.name = name;
         this.kor = kor;
         this.eng = eng;
         this.math = math;
-    }
-
-    public int getSum() {
-        return sum;
-    }
-
-    public void setSum() {
-        this.sum = this.kor + this.eng + this.math;
     }
 
     public String getName() {
@@ -65,32 +54,26 @@ class Score {
         this.math = math;
     }
 
-    public String toString() {
-        return name + " " + kor + " " + eng + " " + math + " " + sum;
+    public int calcSum() {
+        return this.kor + this.eng + this.math;
     }
 
 }
 
 public class Prob2 {
     public Vector getScore(String filename) {
-        final int NAME = 0;
-        final int KOR = 1;
-        final int ENG = 2;
-        final int MATH = 3;
+        final int NAME_IDX = 0;
+        final int KOR_IDX = 1;
+        final int ENG_IDX = 2;
+        final int MATH_IDX = 3;
         Vector<Score> scores = new Vector();
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String str = null;
-            String[] strArr = new String[4];
+            String str;
+            String[] strArr;
             while ((str = br.readLine()) != null) {
-                Score score = new Score();
                 strArr = str.split("/");
-                score.setName(strArr[NAME]);
-                score.setKor(Integer.parseInt(strArr[KOR]));
-                score.setEng(Integer.parseInt(strArr[ENG]));
-                score.setMath(Integer.parseInt(strArr[MATH]));
-                score.setSum();
-                scores.add(score);
+                scores.add(new Score(strArr[NAME_IDX], Integer.parseInt(strArr[KOR_IDX]), Integer.parseInt(strArr[ENG_IDX]), Integer.parseInt(strArr[MATH_IDX])));
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -107,7 +90,7 @@ public class Prob2 {
             Score score = (Score)scores.get(i);
             System.out.println(score.getName() + " : "
                     + score.getKor() + " " + score.getEng() + " "
-                    + score.getMath() + " " + score.getSum());
+                    + score.getMath() + " " + score.calcSum());
         }
 
 
