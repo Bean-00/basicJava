@@ -32,7 +32,7 @@ ORDER BY a.AVG_SALARY DESC;
 
 --2. 1
 WITH ALL_RANK AS (SELECT RANK() OVER (ORDER BY SALARY DESC) "RANKING",
-                          e.LAST_NAME                        "LAST_NAME",
+                         e.LAST_NAME                        "LAST_NAME",
                          e.FIRST_NAME                       "FIRST_NAME",
                          ROUND(e.SALARY, 0)                 "SALARY"
                   FROM EMPLOYEES E)
@@ -55,9 +55,9 @@ WITH HIREYEAR_2005_SALARY_AVG AS (select JOB_ID,
                                   from EMPLOYEES
                                   where JOB_ID = 'SA_MAN')
 SELECT YEAR,
-    AVG(SALARY)
+       AVG(SALARY)
 FROM HIREYEAR_2005_SALARY_AVG H
-    INNER JOIN JOBS J ON H.JOB_ID = J.JOB_ID
+         INNER JOIN JOBS J ON H.JOB_ID = J.JOB_ID
 WHERE J.JOB_TITLE = 'Sales Manager'
 GROUP BY YEAR
 ORDER BY YEAR;
@@ -363,18 +363,14 @@ SELECT D.DEPARTMENT_NAME "부서명",
        DH.HM "입사월",
        DH.HM_CNT "직원수"
 FROM DEPT_HIRE "DH"
-         INNER JOIN DEPARTMENTS D ON DH.DEPARTMENT_ID = D.DEPARTMENT_ID;
+         INNER JOIN DEPARTMENTS D ON DH.DEPARTMENT_ID = D.DEPARTMENT_ID
+ORDER BY D.DEPARTMENT_NAME;
 
 
---2.
-SELECT
-    DEPARTMENT_ID
-FROM EMPLOYEES
-WHERE DEPARTMENT_ID IS NULL;
-
+--2. <>
 SELECT NVL(C.COUNTRY_NAME, '부서없음'),
        NVL(L.CITY, '부서없음'),
-       COUNT(EMPLOYEE_ID)--,
+       COUNT(EMPLOYEE_ID)
 FROM COUNTRIES C
          LEFT OUTER JOIN LOCATIONS L ON C.COUNTRY_ID = L.COUNTRY_ID
          LEFT OUTER JOIN DEPARTMENTS D ON L.LOCATION_ID = D.LOCATION_ID
