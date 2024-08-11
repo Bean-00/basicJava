@@ -189,6 +189,25 @@ ROLLBACK;
 
 SELECT * FROM emp_test;
 
+--//===================================
+
+INSERT
+INTO emp_test (id, name, salary, title, in_date, dept_name)
+VALUES (7, USER, 1500, '부사장', '24-08-06', '관리부');
+
+INSERT
+INTO emp_test (id, name, salary, title, in_date, dept_name)
+VALUES (1, '김사장', 600, '사장', '04-07-19', '개발부');
+
+INSERT
+INTO emp_test (id, name, salary, title, in_date, dept_name)
+VALUES (2, '홍길동', 1500, '부사장', '04-07-19', '관리부');
+
+INSERT
+INTO emp_test (id, name, salary, title, in_date, dept_name)
+VALUES (3, '홍길순', 2500, '부사장', '24-08-06', '대기발령');
+
+
 --//==========================================//
 
 SELECT * FROM emp_test;
@@ -216,10 +235,12 @@ FROm emp_test;
 
 --//==========================================//
 
-SELECT name 이름, salary 월급, salary * 12 연봉 (성과급 제외)
+SELECT name 이름, salary 월급, salary * 12 "연봉 (성과급 제외)"
 FROM emp_test;
 
 --//==========================================//
+-----------------------[go]
+
 SELECT * FROM emp_test;
 
 SELECT name, NVL(salary, '무급')
@@ -255,7 +276,7 @@ ORDER BY salary * 12 ASC NULLS FIRST;
 SELECT
 name 이름, salary * 12 연봉
 FROM emp_test
-ORDER BY salary * 12 DESC NULLS LAST
+ORDER BY salary * 12 DESC NULLS LAST;
 
 --//===============================================//
 
@@ -265,17 +286,17 @@ FROM emp_test
 ORDER BY salary * 12;
 
 SELECT
-name 이름. salary * 12 연봉
+name 이름, salary * 12 연봉
 FROM emp_test
 ORDER BY salary;
 
 SELECT
-name 이름. salary * 12 연봉
+name 이름, salary * 12 연봉
 FROM emp_test
 ORDER BY 연봉;
 
 SELECT
-name 이름. salary * 12 연봉
+name 이름, salary * 12 연봉
 FROM emp_test
 ORDER BY 2;
 
@@ -345,7 +366,7 @@ ROLLBACK;
 --//=================================================//
 
 SELECT
-name 이름, SALARY * 12 얀봉
+name 이름, SALARY * 12 연봉
 FROM emp_test
 ORDER BY salary * 12 ASC;
 
@@ -370,7 +391,7 @@ ORDER BY salary;
 SELECT
 name 이름, salary 월급, in_date 입사일
 FROM emp_test
-WHERE in_date;
+WHERE in_date >= '이순신666';
 
 SELECT
 name 이름, salary 월급, in_date 입사일
@@ -387,9 +408,12 @@ SELECT name FROM emp_test ORDER BY name;
 SELECT
 name 이름, salary 월급, in_date 입사일
 FROM emp_test
-WHERE in_date > '2004-01-01' OR salary >= 5000;
+WHERE in_date > '2004-01-01' AND salary >= 5000;
 
---//========================================================//
+SELECT
+name 이름, salary 월급, in_date 입사일
+FROM emp_test
+WHERE in_date > '2004-01-01' OR salary >= 5000;
 
 SELECT
 name 이름, salary * 12 연봉, dept_name 부서
@@ -399,7 +423,7 @@ WHERE in_date > '2007-01-01' AND salary >= 5000 OR dept_name = '관리부';
 SELECT
 name 이름, salary 월급, dept_name 부서, in_date 입사일
 FROM emp_test
-WHERE in_date > '2007-01-01' AND (salary >= 5000 OR dept_name = '관리부')
+WHERE in_date > '2007-01-01' AND (salary >= 5000 OR dept_name = '관리부');
 
 --//=========================================================//
 
@@ -426,6 +450,12 @@ SELECT
 name 이름, salary 월급, dept_name 부서, in_date 입사일
 FROM emp_test
 WHERE name BETWEEN '김유신222' AND '한국990'
+ORDER BY name;
+
+SELECT
+name 이름, salary 월급, dept_name 부서, in_date 입사일
+FROM emp_test
+WHERE name NOT BETWEEN '김유신222' AND '한국990'
 ORDER BY name;
 
 --아래와 비교 이해
@@ -463,12 +493,16 @@ WHERE name LIKE '김__';
 
 SELECT name 이름, dept_name 부서
 FROM emp_test
-WHERE name LIKE '_김_';
+WHERE name LIKE '_길_';
+
+SELECT name 이름, dept_name 부서
+FROM emp_test
+WHERE name LIKE '%동';
 
 -- // ============================================== //
 
-INSERT INTO emp_test (name, title) VAQLUES ('박_%', '특수%');
-INSERT INTO emp_test (name, title) VAQLUES ('김_%', '특수%');
+INSERT INTO emp_test (name, title) VALUES ('박_%', '특수%');
+INSERT INTO emp_test (name, title) VALUES ('김_%', '특수%');
 SELECT * FROM emp_test;
 COMMIT;
 
@@ -483,6 +517,10 @@ WHERE name LIKE '_\_\%' ESCAPE '\';
 SELECT *
 FROM emp_test
 WHERE name LIKE '_?_?%' ESCAPE '?';
+
+SELECT *
+FROM emp_test
+WHERE name LIKE '_o_o%' ESCAPE 'o';
 
 -- // ============================================== //
 

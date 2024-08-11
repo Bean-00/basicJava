@@ -600,8 +600,8 @@ FROM emp_test;
 
 SELECT COUNT(*) 영업부직원1,
        COUNT(dept_name) 영업부직원2,
-       COUNT(salary) 영업부직원월급수령자,
-FROM emp_test
+       COUNT(salary) 영업부직원월급수령자
+	FROM emp_test
 WHERE dept_name = '영업부';
 
 SELECT SUM(salary) 관리부월급합,
@@ -609,7 +609,7 @@ SELECT SUM(salary) 관리부월급합,
        MIN(salary) 관리부최소대월급,
        AVG(salary) 관리부평균월급,
        AVG(NVL(salary, 0)) 관리부평균월급
-FROM emp_test
+       FROM emp_test
 WHERE dept_name = '관리부';
 
 SELECT SUM(salary) 관리부월급합,
