@@ -108,9 +108,9 @@ INSERT INTO c_emp VALUES(101,'김사장',1000,'3429-0001',1);
 select
 c_emp.name 이름,
 s_dept.dept_name 부서명,
-to_char(c_emp.salary * 12, 'L99,999') 연봉
+to_char(c_emp.salary, 'L99,999') 연봉
 from c_emp, s_dept
-where c_emp.dept_id = s_dept.id and c_emp.name like '김%'
+where c_emp.name like '김%'
 order by salary desc;
 
  SELECT TO_CHAR(sal, '$99,999'), TO_CHAR(sal, 'L99,999') FROM emp;
@@ -123,34 +123,18 @@ order by salary desc;
 select
 c_emp.name 이름,
 s_dept.dept_name 부서명,
-to_char(trunc(c_emp.salary, 1), 'L99,999') 연봉
+to_char(c_emp.salary/30, 'L99,999') 연봉
 from c_emp, s_dept
-where c_emp.dept_id = s_dept.id and c_emp.name like '김%' and c_emp.salary > 2000
-order by s_dept.dept_name, c_emp.name desc;
+where c_emp.name like '김%' and c_emp.salary > 2000
+order by s_dept.dept_name c_emp.name desc;
 
 
 
 3. 부서별 평균 월급  부서번호/부서명/평균월급 조회
      ==> 부서번호 :: 오름차순
-select
-s_dept.id 부서번호,
-s_dept.dept_name 부서명,
-to_char(trunc(avg(c_emp.salary), 1), 'L99,999') 평균월급
-from c_emp, s_dept
-where c_emp.dept_id = s_dept.id
-group by s_dept.id, s_dept.dept_name
-order by s_dept.id asc;
-
 
 
 
 
 4. 총무부 평균 월급  부서번호/부서명/평균월급 조회
-select
-s_dept.id 부서번호,
-s_dept.dept_name 부서명,
-to_char(trunc(avg(c_emp.salary), 1), 'L99,999') 평균월급
-from c_emp, s_dept
-where c_emp.dept_id = s_dept.id and s_dept.dept_name = '총무부'
-group by s_dept.id, s_dept.dept_name
-order by s_dept.id asc;
+

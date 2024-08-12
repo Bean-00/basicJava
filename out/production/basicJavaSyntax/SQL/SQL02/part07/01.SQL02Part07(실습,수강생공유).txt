@@ -1,16 +1,16 @@
 //========================================================//
-//==> JOIN : ÇÏ³ª ÀÌ»óÀÇ Å×ÀÌºí·Î ºÎÅÍ ¿¬°üµÈ Data Á¶È¸
-	  4°¡Áö °æ¿ì : EQUI JOIN / NON-EQUI JOIN / SELF JOIN / OUTER JOIN
+//==> JOIN : í•˜ë‚˜ ì´ìƒì˜ í…Œì´ë¸”ë¡œ ë¶€í„° ì—°ê´€ëœ Data ì¡°íšŒ
+	  4ê°€ì§€ ê²½ìš° : EQUI JOIN / NON-EQUI JOIN / SELF JOIN / OUTER JOIN
 
 
 
 //========================================================//
 //==> 1. NON-EQUIJOIN 
-	=> EQUI JOIN Àº = ¿¬»êÀÚ¸¦ »ç¿ë
-	=> NON-EQUI JOIN Àº =¿¬»êÀÚ¸¦ Á¦¿ÜÇÑ ºñ±³ ¿¬»êÀÚ »ç¿ë
+	=> EQUI JOIN ì€ = ì—°ì‚°ìžë¥¼ ì‚¬ìš©
+	=> NON-EQUI JOIN ì€ =ì—°ì‚°ìžë¥¼ ì œì™¸í•œ ë¹„êµ ì—°ì‚°ìž ì‚¬ìš©
 
 
-//==> sal_grade TABLE »ý¼º
+//==> sal_grade TABLE ìƒì„±
 CREATE TABLE sal_grade(
 	grade	CHAR(1)	CONSTRAINT salgrade_grade_nn	NOT NULL,
 	losal	NUMBER(4)	CONSTRAINT salgrade_losal_uq	UNIQUE,
@@ -18,7 +18,7 @@ CREATE TABLE sal_grade(
 );
 
 
-//==> RECORD ÀÔ·Â
+//==> RECORD ìž…ë ¥
 
 INSERT INTO sal_grade VALUES('A',4000,5999);
 INSERT INTO sal_grade VALUES('B',3000,3999);
@@ -37,14 +37,14 @@ SELECT * FROM sal_grade;
 
 
 //==============================================//
-//================== ½Ç   ½À 1  ====================//
+//================== ì‹¤   ìŠµ 1  ====================//
 //==============================================//
 
-1. °³¹ßºÎ Á÷¿ø°ú ¿µ¾÷ºÎÁ÷¿ø ÀÌ¸§ , ¿ù±Þ , ¿ù±Þµî±Þ , ºÎ¼­¸í Á¶È¸
-    => µî±Þ ³ôÀº¼ø  ( NON-EQUI JOIN /  EQUI JOIN °°ÀÌ »ç¿ë)
+1. ê°œë°œë¶€ ì§ì›ê³¼ ì˜ì—…ë¶€ì§ì› ì´ë¦„ , ì›”ê¸‰ , ì›”ê¸‰ë“±ê¸‰ , ë¶€ì„œëª… ì¡°íšŒ
+    => ë“±ê¸‰ ë†’ì€ìˆœ  ( NON-EQUI JOIN /  EQUI JOIN ê°™ì´ ì‚¬ìš©)
 
-2. sal_grade°¡ A  ÀÎ¿øÀÌ 2¸íÀÌ»óÀÎ ºÎ¼­¸í , ÀÎ¿ø¼ö , µî±Þ 
-     ( NON-EQUI JOIN /  EQUI JOIN °°ÀÌ »ç¿ë)
+2. sal_gradeê°€ A  ì¸ì›ì´ 2ëª…ì´ìƒì¸ ë¶€ì„œëª… , ì¸ì›ìˆ˜ , ë“±ê¸‰ 
+     ( NON-EQUI JOIN /  EQUI JOIN ê°™ì´ ì‚¬ìš©)
 
 
 
@@ -55,13 +55,13 @@ SELECT * FROM sal_grade;
 
 
 //==============================================//
-//==> ºÎ¼­ ¹èÄ¡ Àü  ½ÅÀÔ »ç¿ø 2¸í RECORD ÀÔ·Â
+//==> ë¶€ì„œ ë°°ì¹˜ ì „  ì‹ ìž… ì‚¬ì› 2ëª… RECORD ìž…ë ¥
 //==============================================//
 
-//==> FROEGIN KEY Á¦¾àÁ¶°Ç : ´Ù¸¥ TABLE PK or NULL ÀÔ·Â
+//==> FROEGIN KEY ì œì•½ì¡°ê±´ : ë‹¤ë¥¸ TABLE PK or NULL ìž…ë ¥
 
-INSERT INTO c_emp VALUES(201,'½ÅÀÔ1',1500,'3429-0100',null);
-INSERT INTO c_emp VALUES(202,'½ÅÀÔ2',1500,'3429-0200',null);
+INSERT INTO c_emp VALUES(201,'ì‹ ìž…1',1500,'3429-0100',null);
+INSERT INTO c_emp VALUES(202,'ì‹ ìž…2',1500,'3429-0200',null);
 
 COMMIT;
 
